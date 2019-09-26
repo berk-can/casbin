@@ -18,9 +18,9 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/casbin/casbin/v2/errors"
-	"github.com/casbin/casbin/v2/log"
-	"github.com/casbin/casbin/v2/rbac"
+	"github.com/berk-can/casbin/v2/errors"
+	"github.com/berk-can/casbin/v2/log"
+	"github.com/berk-can/casbin/v2/rbac"
 )
 
 type MatchingFunc func(arg1, arg2 string) bool

@@ -17,8 +17,8 @@ package casbin
 import (
 	"testing"
 
-	"github.com/casbin/casbin/v2/model"
-	"github.com/casbin/casbin/v2/persist/file-adapter"
+	"github.com/berk-can/casbin/v2/model"
+	"github.com/berk-can/casbin/v2/persist/file-adapter"
 )
 
 func TestKeyMatchModelInMemory(t *testing.T) {
