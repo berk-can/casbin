@@ -373,7 +373,7 @@ func (e *Enforcer) enforce(matcher string, rvals ...interface{}) (bool, error) {
 	if policyLen := len(e.model["p"]["p"].Policy); policyLen != 0 {
 		policyEffects = make([]effect.Effect, policyLen)
 		matcherResults = make([]float64, policyLen)
-		if len(e.model["r"]["r"].Tokens) != len(rvals) {
+		if len(e.model["r"]["r"].Tokens) > len(rvals) {
 			return false, fmt.Errorf(
 				"invalid request size: expected %d, got %d, rvals: %v",
 				len(e.model["r"]["r"].Tokens),
@@ -382,7 +382,7 @@ func (e *Enforcer) enforce(matcher string, rvals ...interface{}) (bool, error) {
 		}
 		for i, pvals := range e.model["p"]["p"].Policy {
 			// log.LogPrint("Policy Rule: ", pvals)
-			if len(e.model["p"]["p"].Tokens) != len(pvals) {
+			if len(e.model["p"]["p"].Tokens) > len(pvals) {
 				return false, fmt.Errorf(
 					"invalid policy size: expected %d, got %d, pvals: %v",
 					len(e.model["p"]["p"].Tokens),
